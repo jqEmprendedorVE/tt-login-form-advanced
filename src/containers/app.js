@@ -1,11 +1,13 @@
 import React from 'react'
+import mobile from 'is-mobile';
+import { Redirect } from 'react-router'
+
 class App extends React.Component {
   render() {
-    return (
-      <div>
-        <h1>Home</h1>
-      </div>
-    )
+    return !mobile()
+      ? <Redirect to="/web" />
+      : <Redirect to="/mobile" />
   }
 }
+
 export default App

@@ -3,6 +3,8 @@ import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom';
 import App from '../containers/app';
 import Users from '../containers/users';
 import Contact from '../containers/contact';
+import Web from '../containers/web';
+import Mobile from '../containers/mobile';
 
 const Notfound = () => <h1>Not found</h1>
 const Header = () => (
@@ -19,7 +21,6 @@ const Header = () => (
   </ul>
 );
 
-
 const routing = (
   <Router>
     <div>
@@ -28,6 +29,8 @@ const routing = (
         <Route exact path="/" component={App} />
         <Route path="/users" component={Users} />
         <Route path="/contact" component={Contact} />
+        <Route path="/web" component={Web} />
+        <Route path="/mobile" component={Mobile} />
         <Route component={Notfound} />
       </Switch>
     </div>
