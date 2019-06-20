@@ -1,7 +1,7 @@
 import jsSHA from 'jssha';
 import browserDetect from 'browser-detect'
 
-export const getUserId = (mail) => {
+export const getUserIdSHA1 = (mail) => {
   let shaObj = new jsSHA("SHA-1", "TEXT");
   shaObj.update(mail);
   return shaObj.getHash("B64")
@@ -10,7 +10,7 @@ export const getUserId = (mail) => {
     .replace('=', '');
 }
 
-export const getPasswd = (passwd) => {
+export const getPasswdHEX = (passwd) => {
   let shaObj = new jsSHA("SHA-256", "TEXT");
   shaObj.update(passwd);
   return shaObj.getHash("HEX");
@@ -19,8 +19,8 @@ export const getPasswd = (passwd) => {
 export const tryLogin = () => {
   const info = browserDetect();
   const description = `${info.name}\\${info.version} on ${info.os}`;
-  const userId = getUserId('hello@example.com');
-  const passwd = getPasswd('lalala');    
+  const userId = getUserIdSHA1('hello@example.com');
+  const passwd = getPasswdHEX('lalala');    
   const headers = new Headers({ 'Content-Type': 'application/json' });
   const body =  JSON.stringify({
     "passwd": passwd,
@@ -42,7 +42,7 @@ export const tryLogin = () => {
 }
 
 export default {
-  getUserId,
-  getPasswd,
+  getUserIdSHA1,
+  getPasswdHEX,
   tryLogin
 }
