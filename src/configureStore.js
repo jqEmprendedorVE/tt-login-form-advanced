@@ -12,7 +12,7 @@ export default function configureStore(preloadedState) {
   const enhancers = [middlewareEnhancer, monitorReducersEnhancer]
   const composedEnhancers = process.env.NODE_ENV !== 'production'
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__(...enhancers) 
-    : compose(...enhancers);
+    : compose;
 
   const store = createStore(rootReducer, /* preloadedState, */ composedEnhancers)
 

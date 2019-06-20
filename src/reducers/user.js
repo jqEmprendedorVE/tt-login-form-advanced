@@ -2,11 +2,10 @@ import * as types from '../constants/ActionTypes';
 
 const initialState = {
   session: null,
-  isLoggedIn: false,
-  selectedCountry: null
+  isLoggedIn: false
 }
 
-const update = (state = initialState, action) => {
+const updateStore = (state = initialState, action) => {
   if (action.type === types.AUTH_TRY_LOGIN_SUCCESS) {
     return {
       ...state,
@@ -18,4 +17,4 @@ const update = (state = initialState, action) => {
   return state;
 }
 
-export default update;
+export default updateStore;
