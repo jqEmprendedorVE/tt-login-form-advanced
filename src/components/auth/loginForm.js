@@ -1,5 +1,5 @@
-import React from 'react';
-import { Form, Button } from 'react-bootstrap';
+import React from 'react'
+import { Form, Button } from 'react-bootstrap'
 
 const loginForm = (props) => (
   <Form onSubmit={props.submit}>
@@ -29,6 +29,6 @@ const loginForm = (props) => (
       Ingresar
     </Button>
   </Form>
- );
+ )
 
-export default loginForm;
+export default loginForm

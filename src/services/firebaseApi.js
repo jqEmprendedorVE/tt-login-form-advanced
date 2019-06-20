@@ -12,5 +12,5 @@ var firebaseApi = {
 export default function (options) {
   if (!firebase.apps.length) firebase.initializeApp(options)
   Vue.prototype.$firebase = FirebasePlugin
-  return firebaseApi;
+  return firebaseApi
 }

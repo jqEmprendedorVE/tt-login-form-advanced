@@ -1,4 +1,4 @@
-import * as types from '../../constants/ActionTypes';
+import * as types from '../../constants/ActionTypes'
 import apiClient from '../../api/client'
 
 export const tryLogin = ({email, pass}) => (dispatch) => apiClient.login(email, pass)
@@ -12,4 +12,4 @@ export const tryLogin = ({email, pass}) => (dispatch) => apiClient.login(email, 
     LOGIN_FAILED: true,
     e
   })
-);
+)

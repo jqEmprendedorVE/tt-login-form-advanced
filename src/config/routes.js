@@ -1,13 +1,13 @@
-import React from 'react';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import App from '../containers/app';
-import Users from '../containers/users';
-import Contact from '../containers/contact';
-import Web from '../containers/web';
-import Mobile from '../containers/mobile';
-import Header from '../components/header';
+import React from 'react'
+import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import App from '../containers/app'
+import Users from '../containers/users'
+import Contact from '../containers/contact'
+import Web from '../containers/web'
+import Mobile from '../containers/mobile'
+import Header from '../components/header'
 
-import Login from '../containers/templates/auth/login';
+import Login from '../containers/templates/auth/login'
 
 const Notfound = () => <h1>Not found</h1>
 
@@ -34,6 +34,6 @@ const routing = (
       </Switch>
     </div>
   </Router>
-);
+)
 
-export default routing;
+export default routing

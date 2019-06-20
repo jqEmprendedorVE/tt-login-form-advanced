@@ -1,5 +1,5 @@
 import browserDetect from 'browser-detect'
-import {getUserIdSHA1, getPasswdHEX} from '../domain/hashLoginForm';
+import {getUserIdSHA1, getPasswdHEX} from '../domain/hashLoginForm'
 
 class apiClient {
   constructor() {
@@ -7,17 +7,17 @@ class apiClient {
   }
 
   async login (_user, _pass) {
-    const url = this.url;
-    const info = browserDetect();
-    const description = `${info.name}\\${info.version} on ${info.os}`;
-    const userId = getUserIdSHA1(_user);
-    const passwd = getPasswdHEX(_pass);
-    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const url = this.url
+    const info = browserDetect()
+    const description = `${info.name}\\${info.version} on ${info.os}`
+    const userId = getUserIdSHA1(_user)
+    const passwd = getPasswdHEX(_pass)
+    const headers = new Headers({ 'Content-Type': 'application/json' })
     const body =  JSON.stringify({
       "passwd": passwd,
       "persistence": 0,
       "description": description
-    });
+    })
 
     return await fetch(`${url}users/${userId}/sessions`, {
       method: 'POST',
@@ -25,13 +25,13 @@ class apiClient {
       body,
       credentials: 'include'
     }).then(function(response) {
-      return response.json();
+      return response.json()
     })
     .then(function(myJson) {
-      return myJson;
-    });
+      return myJson
+    })
   }
 
 }
 
-export default new apiClient();
+export default new apiClient()

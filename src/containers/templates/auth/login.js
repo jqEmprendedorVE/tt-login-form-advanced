@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import { connect } from 'react-redux';
-import LoginForm from '../../../components/auth/loginForm';
-import { tryLogin } from '../../../actions/auth';
+import React, {Component} from 'react'
+import { connect } from 'react-redux'
+import LoginForm from '../../../components/auth/loginForm'
+import { tryLogin } from '../../../actions/auth'
 
 class Login extends Component {
   constructor(props) {
-    super(props);
-    this.state = {email: '', pass: ''};
+    super(props)
+    this.state = {email: '', pass: ''}
 
-    this.handleChange = this.handleChange.bind(this);
-    this.tryLogin = this.tryLogin.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+    this.tryLogin = this.tryLogin.bind(this)
   }
 
   handleChange(e) {
@@ -17,8 +17,8 @@ class Login extends Component {
   }
 
   tryLogin(e) {
-    e.preventDefault();
-    this.props.tryLogin({...this.state});
+    e.preventDefault()
+    this.props.tryLogin({...this.state})
   }
 
   render() {
@@ -46,4 +46,4 @@ export default connect(
   {
     tryLogin
   }
-)(Login);
+)(Login)

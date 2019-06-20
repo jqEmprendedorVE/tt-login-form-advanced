@@ -1,4 +1,4 @@
-import * as types from '../constants/ActionTypes';
+import * as types from '../constants/ActionTypes'
 
 const initialState = {
   session: null,
@@ -11,10 +11,10 @@ const updateStore = (state = initialState, action) => {
       ...state,
       isLoggedIn: true,
       session: action.session
-    };
+    }
   }
 
-  return state;
+  return state
 }
 
-export default updateStore;
+export default updateStore

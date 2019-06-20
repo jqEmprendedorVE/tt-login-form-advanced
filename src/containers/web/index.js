@@ -1,5 +1,5 @@
 import React from 'react'
-import mobile from 'is-mobile';
+import mobile from 'is-mobile'
 import { Redirect } from 'react-router'
 
 class Web extends React.Component {
