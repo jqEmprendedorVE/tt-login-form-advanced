@@ -5,8 +5,12 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import routes from './config/routes';
 import configureStore from './configureStore'
+import {tryLogin} from './domain/hashLoginForm';
 
 const store = configureStore();
+
+
+tryLogin();
 
 const renderApp = () =>
   render(
