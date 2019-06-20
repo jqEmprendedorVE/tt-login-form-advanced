@@ -1,9 +1,18 @@
 import React from 'react'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap'
 
 const loginForm = (props) => (
   <Form onSubmit={props.submit}>
     <h3>Iniciar sesion</h3>
+    {props.loginFailed && (
+      <Alert variant='danger'>
+        <small><strong>¡Hay un error! :(</strong></small>
+        <p>
+          Datos incorrectos
+          <span><small> Por favor, vuelve a intentarlo...</small></span>
+        </p>
+      </Alert>
+    )}
     <Form.Group controlId="email">
       <Form.Label>Correo electrónico</Form.Label>
       <Form.Control

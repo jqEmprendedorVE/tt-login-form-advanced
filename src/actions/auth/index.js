@@ -9,7 +9,6 @@ export const tryLogin = ({email, pass}) => (dispatch) => apiClient.login(email, 
 )
 .catch(e => dispatch({
     type: types.AUTH_TRY_LOGIN_FAILED,
-    LOGIN_FAILED: true,
     e
   })
 )

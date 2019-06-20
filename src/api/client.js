@@ -19,17 +19,13 @@ class apiClient {
       "description": description
     })
 
-    return await fetch(`${url}users/${userId}/sessions`, {
+    const response = await fetch(`${url}users/${userId}/sessions`, {
       method: 'POST',
       headers,
       body,
       credentials: 'include'
-    }).then(function(response) {
-      return response.json()
-    })
-    .then(function(myJson) {
-      return myJson
-    })
+    });
+    return response.json();
   }
 
 }

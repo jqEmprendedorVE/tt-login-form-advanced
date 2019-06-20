@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router'
 import LoginForm from '../../../components/auth/loginForm'
 import { tryLogin } from '../../../actions/auth'
 
@@ -22,6 +23,9 @@ class Login extends Component {
   }
 
   render() {
+    if(this.props.isLoggedIn)
+      return <Redirect to="/private" />
+
     return (
       <div className="container">
         <div className="row">
@@ -31,6 +35,7 @@ class Login extends Component {
               handleEmailChange={this.handleChange}
               handlePassChange={this.handleChange}
               submit={this.tryLogin}
+              loginFailed={this.props.loginFailed}
             />
           </div>
         </div> 
@@ -41,7 +46,8 @@ class Login extends Component {
 
 export default connect(
   state => ({
-    isLoggedIn: state.user.isLoggedIn
+    isLoggedIn: state.user.isLoggedIn,
+    loginFailed: state.user.loginFailed
   }),
   {
     tryLogin

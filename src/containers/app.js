@@ -1,13 +1,17 @@
 import React from 'react'
-import mobile from 'is-mobile'
+import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
 
 class App extends React.Component {
   render() {
-    return !mobile()
-      ? <Redirect to="/web" />
-      : <Redirect to="/mobile" />
+    return this.props.isLoggedIn
+      ? <Redirect to="/private" />
+      : <Redirect to="/login" />
   }
 }
 
-export default App
+export default connect(
+  state => ({
+    isLoggedIn: state.user.isLoggedIn
+  })
+)(App)
