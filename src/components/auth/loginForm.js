@@ -3,8 +3,9 @@ import { Form, Button } from 'react-bootstrap';
 
 const loginForm = (props) => (
   <Form onSubmit={props.submit}>
+    <h3>Iniciar sesion</h3>
     <Form.Group controlId="email">
-      <Form.Label>Email address</Form.Label>
+      <Form.Label>Correo electrónico</Form.Label>
       <Form.Control
         value={props.data.email}
         onChange={props.handleEmailChange} 
@@ -12,20 +13,20 @@ const loginForm = (props) => (
         placeholder="Enter email" 
         required/>
       <Form.Text className="text-muted">
-        We'll never share your email with anyone else.
+        Nosotros nunca compartiremos su correo con otros.
       </Form.Text>
     </Form.Group>
     <Form.Group controlId="pass">
-      <Form.Label>Password</Form.Label>
+      <Form.Label>Contraseña</Form.Label>
       <Form.Control
         value={props.data.pass}
         onChange={props.handlePassChange} 
         type="password" 
-        placeholder="Password" 
+        placeholder="Contraseña" 
         required/>
     </Form.Group>
     <Button variant="primary" type="submit">
-      Submit
+      Ingresar
     </Button>
   </Form>
  );
