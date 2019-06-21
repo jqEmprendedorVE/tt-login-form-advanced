@@ -6,26 +6,28 @@ class apiClient {
     this.url = 'https://master.sgi.dev.automacity.com/api/'
   }
 
-  async login (_user, _pass) {
+  async login (_user, _pass) {    
     const url = this.url
     const info = browserDetect()
-    const description = `${info.name}\\${info.version} on ${info.os}`
     const userId = getUserIdSHA1(_user)
     const passwd = getPasswdHEX(_pass)
-    const headers = new Headers({ 'Content-Type': 'application/json' })
+    const urlSession = `${url}users/${userId}/sessions`
+    const description = `${info.name}\\${info.version} on ${info.os}`
+    const headers = new Headers({ 'Accept': 'application/json', 'Content-Type': 'application/json' })
     const body =  JSON.stringify({
       "passwd": passwd,
       "persistence": 0,
       "description": description
     })
 
-    const response = await fetch(`${url}users/${userId}/sessions`, {
+    const response = await fetch(urlSession, {
       method: 'POST',
       headers,
       body,
       credentials: 'include'
     });
-    return response.json();
+    const json = await response.json();
+    return json;
   }
 
 }
