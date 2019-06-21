@@ -24,7 +24,7 @@ class apiClient {
       method: 'POST',
       headers,
       body,
-      credentials: 'same-origin'
+      credentials: 'include'
     });
     return response.json();
   }
