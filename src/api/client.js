@@ -24,10 +24,9 @@ class apiClient {
       method: 'POST',
       headers,
       body,
-      credentials: 'include'
+      credentials: 'same-origin'
     });
-    const json = await response.json();
-    return json;
+    return response.json();
   }
 
 }
