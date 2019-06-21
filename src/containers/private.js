@@ -1,6 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
+import { Button } from 'react-bootstrap'
+import { logout } from '../actions/auth'
 
 
 class Private extends React.Component {
@@ -12,6 +14,7 @@ class Private extends React.Component {
       <div className="container">
         <h1>Seccion Privada</h1>
         <p>Haz ingresado satisfactoriamente :)</p>
+        <Button variant="primary" onClick={this.props.logout}>Salir</Button>
       </div>
     )
   }
@@ -20,5 +23,8 @@ class Private extends React.Component {
 export default connect(
   state => ({
     isLoggedIn: state.user.isLoggedIn
-  })
+  }),
+  {
+    logout
+  }
 )(Private)

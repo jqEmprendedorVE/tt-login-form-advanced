@@ -12,8 +12,7 @@ const Notfound = () => <h1>Not found</h1>
 const header = {
   items: [
     {name: 'Home', url: '/'},
-    {name: 'Contact', url: '/contact'},
-    {name: 'Login', url: '/login'}
+    {name: 'Contact', url: '/contact'}
   ]
 }
 

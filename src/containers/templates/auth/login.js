@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router'
 import LoginForm from '../../../components/auth/loginForm'
-import { tryLogin } from '../../../actions/auth'
+import { tryLogin, loginInit } from '../../../actions/auth'
 
 class Login extends Component {
   constructor(props) {
@@ -11,6 +11,10 @@ class Login extends Component {
 
     this.handleChange = this.handleChange.bind(this)
     this.tryLogin = this.tryLogin.bind(this)
+  }
+
+  componentWillMount() {
+    this.props.loginInit()
   }
 
   handleChange(e) {
@@ -50,6 +54,7 @@ export default connect(
     loginFailed: state.user.loginFailed
   }),
   {
-    tryLogin
+    tryLogin,
+    loginInit
   }
 )(Login)

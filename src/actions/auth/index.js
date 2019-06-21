@@ -12,3 +12,6 @@ export const tryLogin = ({email, pass}) => (dispatch) => apiClient.login(email, 
     e
   })
 )
+
+export const logout = () => (dispatch) => dispatch({type: types.AUTH_LOGOUT})
+export const loginInit = () => (dispatch) => dispatch({type: types.AUTH_LOGIN_INIT})

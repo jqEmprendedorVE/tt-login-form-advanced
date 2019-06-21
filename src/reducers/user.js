@@ -17,10 +17,15 @@ const updateStore = (state = initialState, action) => {
   }
 
   if (action.type === types.AUTH_TRY_LOGIN_FAILED) {
+    console.log(action.e);
     return {
       ...state,
-      loginFailed: true,
+      loginFailed: true
     }
+  }
+
+  if ([types.AUTH_LOGIN_INIT, types.AUTH_LOGOUT].includes(action.type)) {
+    return initialState 
   }
 
   return state
