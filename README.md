@@ -7,6 +7,11 @@ sudo docker image build -t tt/login-form-advanced .`
 sudo docker container run -it -p 3000:3000 tt/login-form-advanced
 ```
 
+## TODO
+
+. Agregar PropTypes
+. Generar tes unitarios
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
