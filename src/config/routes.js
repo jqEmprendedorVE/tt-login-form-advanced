@@ -1,14 +1,16 @@
 import React, {Fragment} from 'react'
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+
+import Auth from '../components/auth'
+
 import App from '../containers/app'
 import Private from '../containers/private'
 import Contact from '../containers/contact'
-import Header from '../components/header'
 
-import Auth from '../components/auth'
+import Header from '../components/header'
 import Login from '../containers/templates/auth/login'
 
-const Notfound = () => <h1>Not found</h1>
+const Notfound = () => (<main className="container"><h1>Not found</h1></main>)
 
 const header = {
   items: [
@@ -17,6 +19,9 @@ const header = {
   ]
 }
 
+/**
+ * Componete para configurar el enrutado de la aplicacion
+ */
 const routing = (
   <Router>
     <Fragment>

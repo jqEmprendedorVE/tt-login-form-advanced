@@ -14,6 +14,11 @@ const persistConfig = {
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
+/**
+ * Configuracion inical para redux
+ * Incluye herramientas de devtools
+ * middlewares para monitoreo y seguimiento de actions
+ */
 export default function configureStore() {
   const isDevelop = process.env.NODE_ENV !== 'production'
   const middlewares = isDevelop ? [loggerMiddleware, thunk] : [thunk]

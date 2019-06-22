@@ -8,7 +8,9 @@ import configureStore from './configureStore'
 import './sass/index.css'
 
 const { store, persistor } = configureStore()
-
+/**
+  Funcion inicial para renderizar la app en root
+ */
 const renderApp = () =>
   render(
     <Provider store={store}>

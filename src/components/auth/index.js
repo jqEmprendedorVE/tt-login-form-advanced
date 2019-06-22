@@ -2,6 +2,10 @@ import React from 'react'
 import happiness from '../../assets/images/happiness.svg'
 import './index.css'
 
+/**
+ * Component funtion el renderizado de la view de auth 
+ * @param {object} props 
+ */
 const Auth = (props) => (
   <div className="container auth">
     <div className="row align-items-center">

@@ -4,27 +4,30 @@ import { Redirect } from 'react-router'
 import LoginForm from '../../../components/auth/loginForm'
 import { tryLogin, loginInit } from '../../../actions/auth'
 
+/**
+ * Clase container para renderizado de auth y en este caso
+ * ejemplo de login
+ * @class Login
+ * @extends {Component}
+ */
 class Login extends Component {
   constructor(props) {
     super(props)
     this.state = {email: '', pass: ''}
-
-    this.handleChange = this.handleChange.bind(this)
-    this.tryLogin = this.tryLogin.bind(this)
   }
 
   componentWillMount() {
     this.props.loginInit()
   }
 
-  handleChange(e) {
+  handleChange = e => {
     this.setState({[e.target.id]: e.target.value})
-  }
+  };
 
-  tryLogin(e) {
+  tryLogin = e => {
     e.preventDefault()
     this.props.tryLogin({...this.state})
-  }
+  };
 
   render() {
     if(this.props.isLoggedIn)

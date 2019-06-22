@@ -1,6 +1,11 @@
 import browserDetect from 'browser-detect'
 import {getUserIdSHA1, getPasswdHEX} from '../domain/hashLoginForm'
 
+/**
+ * Esta clase busca contener los metodos necesarios para los llamados en las actions
+ * TODO: Crear archivos con nombres mas declarativos para importar y exportar funciones
+ * @class apiClient
+ */
 class apiClient {
   constructor() {
     this.url = 'https://master.sgi.dev.automacity.com/api/'
