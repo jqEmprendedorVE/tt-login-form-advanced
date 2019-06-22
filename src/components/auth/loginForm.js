@@ -3,7 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap'
 
 const loginForm = (props) => (
   <Form onSubmit={props.submit}>
-    <h3>Iniciar sesion</h3>
+    <h3 className="text-center">Iniciar sesion</h3>
     {props.loginFailed && (
       <Alert variant='danger'>
         <small><strong>¡Hay un error! :(</strong></small>
@@ -34,7 +34,7 @@ const loginForm = (props) => (
         placeholder="Contraseña" 
         required/>
     </Form.Group>
-    <Button variant="primary" type="submit">
+    <Button variant="primary" type="submit" block>
       Ingresar
     </Button>
   </Form>

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Source Sans Pro', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-top: 2px solid #2c7be5;
+}
+
+#root {
+  height: 100%;
+}
+
+main {
+  margin-top: 40px;
+}
