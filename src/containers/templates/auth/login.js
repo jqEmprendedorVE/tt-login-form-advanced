@@ -1,8 +1,9 @@
-import React, {Component} from 'react'
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router'
-import LoginForm from '../../../components/auth/loginForm'
-import { tryLogin, loginInit } from '../../../actions/auth'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
+import LoginForm from '../../../components/auth/loginForm';
+import { tryLogin, loginInit } from '../../../actions/auth';
 
 /**
  * Clase container para renderizado de auth y en este caso
@@ -12,26 +13,25 @@ import { tryLogin, loginInit } from '../../../actions/auth'
  */
 class Login extends Component {
   constructor(props) {
-    super(props)
-    this.state = {email: '', pass: ''}
+    super(props);
+    this.state = { email: '', pass: '' };
   }
 
   componentWillMount() {
-    this.props.loginInit()
+    this.props.loginInit();
   }
 
   handleChange = e => {
-    this.setState({[e.target.id]: e.target.value})
+    this.setState({ [e.target.id]: e.target.value });
   };
 
   tryLogin = e => {
-    e.preventDefault()
-    this.props.tryLogin({...this.state})
+    e.preventDefault();
+    this.props.tryLogin({ ...this.state });
   };
 
   render() {
-    if(this.props.isLoggedIn)
-      return <Redirect to="/private" />
+    if (this.props.isLoggedIn) return <Redirect to="/private" />;
 
     return (
       <div className="container">
@@ -45,11 +45,16 @@ class Login extends Component {
               loginFailed={this.props.loginFailed}
             />
           </div>
-        </div> 
+        </div>
       </div>
-    )
+    );
   }
 }
+
+Login.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired,
+  loginFailed: PropTypes.bool.isRequired
+};
 
 export default connect(
   state => ({
@@ -60,4 +65,4 @@ export default connect(
     tryLogin,
     loginInit
   }
-)(Login)
+)(Login);

@@ -1,15 +1,20 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router'
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
 
 function App(props) {
-  return props.isLoggedIn
-    ? <Redirect to="/private" />
-    : <Redirect to="/login" />;
+  return props.isLoggedIn ? (
+    <Redirect to="/private" />
+  ) : (
+    <Redirect to="/login" />
+  );
 }
 
-export default connect(
-  state => ({
-    isLoggedIn: state.user.isLoggedIn
-  })
-)(App)
+App.propTypes = {
+  isLoggedIn: PropTypes.bool.isRequired
+};
+
+export default connect(state => ({
+  isLoggedIn: state.user.isLoggedIn
+}))(App);

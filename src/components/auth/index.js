@@ -1,12 +1,13 @@
-import React from 'react'
-import happiness from '../../assets/images/happiness.svg'
-import './index.css'
+import React from 'react';
+import PropTypes from 'prop-types';
+import happiness from '../../assets/images/happiness.svg';
+import './index.css';
 
 /**
- * Component funtion el renderizado de la view de auth 
- * @param {object} props 
+ * Component funtion el renderizado de la view de auth
+ * @param {object} props
  */
-const Auth = (props) => (
+const Auth = props => (
   <div className="container auth">
     <div className="row align-items-center">
       <div className="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
@@ -19,6 +20,10 @@ const Auth = (props) => (
       </div>
     </div>
   </div>
-)
+);
 
-export default Auth
+Auth.propTypes = {
+  children: PropTypes.element.isRequired
+};
+
+export default Auth;
